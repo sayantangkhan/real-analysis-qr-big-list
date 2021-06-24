@@ -9,6 +9,7 @@
 \usepackage{tikz}
 \usepackage{tikz-cd}
 \usepackage{marginnote}
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
 \usepackage{amsmath, amsfonts, amssymb, amsthm}
 \usepackage{bbm}
 % \usepackage{thm-autoref}
@@ -39,6 +40,7 @@
 \theoremstyle{definition}
 \newtheorem*{question}{Question}
 \newtheorem*{exercise}{Exercise}
+\newtheorem{probstate}{Problem}
 
 \theoremstyle{remark}
 \newtheorem*{rem}{Remark}
@@ -46,23 +48,37 @@
 \usepackage[top=2cm, bottom=2cm, inner=2cm, outer=4cm, marginparwidth=3.4cm]{geometry}
 
 \usepackage{gentium}
-\usepackage[euler-digits,small]{eulervm}
+%\usepackage[euler-digits,small]{eulervm}
 
 \usepackage{enumerate}
 \usepackage{xcolor}
 
+%-------------------------------
+%       Custom environments and counters
+%-------------------------------
+
+%\newcounter{problemnum}
+%\setcounter{problemnum}{1}
+
+\newenvironment{problem}[2]{
+    \begin{probstate}[Date: #1, tags: \texttt{#2}]
+}
+{
+  \end{probstate}
+}
+
+\newenvironment{solution}{
+    \begin{proof}[Solution]
+}
+{
+    \end{proof}
+}
 
 \title{Real Analysis qualifying review big list}
 \author{Students at University of Michigan}
 % \date{\formatdate{3}{10}{2019}}
 
-
-\def\sectionautorefname{Section}
-\def\thmautorefname{Theorem}
-\def\lemautorefname{Lemma}
-
 \makeatletter
-
 \makeatother
 
 \begin{document}
@@ -73,6 +89,11 @@
 \section{Uncategorized}
 \label{sec:uncategorized}
 
-
+\begin{problem}{September 2011}{}
+Let $f \in L_1([0,1], dx)$. Find
+ \[
+   \lim_{n \to \infty} \frac{1}{n}  \int_0^1 \log \left( 1+ e^{nf(x)} \right) \, dx.
+ \]
+\end{problem}
 
 \end{document}
