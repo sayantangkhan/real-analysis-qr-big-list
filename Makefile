@@ -1,4 +1,4 @@
-filename = sample-output.pdf
+filename = real-analysis-big-list.pdf
 
 build-pdf:
 	latexmk main.tex

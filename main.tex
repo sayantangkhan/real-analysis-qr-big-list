@@ -1,25 +1,78 @@
-\documentclass[12pt, reqno]{amsart}
-\pdfoutput=1
-\usepackage{mathpreamble}
+\documentclass[11pt, notitlepage]{article}
+\usepackage[utf8]{inputenc}
 
-\title{Title of paper}
-\author{Author}
-\address{Address}
-\email{\href{mailto:email@domain.edu}{email@domain.edu}}
-\thanks{}
-\urladdr{\url{http://personal.page}}
+% \usepackage[nottoc]{tocbibind}
+\usepackage{datetime}
+\usepackage{graphicx}
+\usepackage[nointegrals]{wasysym}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{marginnote}
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+\usepackage{bbm}
+% \usepackage{thm-autoref}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks   = true, %Colours links instead of ugly boxes
+  urlcolor     = blue, %Colour for external hyperlinks
+  linkcolor    = blue, %Colour of internal links
+  citecolor   = red %Colour of citations
+}
 
-\keywords{}
-\subjclass[2010]{}
+\newtheorem{thm}{Theorem}[section]
 
-\date{\today}
+\newtheorem{lem}[thm]{Lemma}
+% \newcommand{\lemautorefname}{Lemma}
+
+\newtheorem{claim}[thm]{Claim}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{conj}[thm]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+
+\theoremstyle{definition}
+\newtheorem{example}[thm]{Example}
+
+\theoremstyle{definition}
+\newtheorem*{question}{Question}
+\newtheorem*{exercise}{Exercise}
+
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+
+\usepackage[top=2cm, bottom=2cm, inner=2cm, outer=4cm, marginparwidth=3.4cm]{geometry}
+
+\usepackage{gentium}
+\usepackage[euler-digits,small]{eulervm}
+
+\usepackage{enumerate}
+\usepackage{xcolor}
+
+
+\title{Real Analysis qualifying review big list}
+\author{Students at University of Michigan}
+% \date{\formatdate{3}{10}{2019}}
+
+
+\def\sectionautorefname{Section}
+\def\thmautorefname{Theorem}
+\def\lemautorefname{Lemma}
+
+\makeatletter
+
+\makeatother
 
 \begin{document}
-\begin{abstract}
-
-\end{abstract}
 \maketitle
 
-\printbibliography
+\tableofcontents
+
+\section{Uncategorized}
+\label{sec:uncategorized}
+
+
 
 \end{document}
