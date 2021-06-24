@@ -1,0 +1,100 @@
+\usepackage{datetime}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{marginnote}
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+\usepackage{mathrsfs}
+\usepackage{bbm}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks   = true, %Colours links instead of ugly boxes
+  urlcolor     = blue, %Colour for external hyperlinks
+  linkcolor    = blue, %Colour of internal links
+  citecolor   = blue %Colour of citations
+}
+
+% Bibliography related
+\usepackage[
+            hyperref=true,
+            url=false,
+            isbn=false,
+            backref=true,
+            style=alphabetic,
+            block=none
+]{biblatex}
+\addbibresource{references.bib}
+
+% To refer to theorems that appear later
+\newtheorem*{rep@theorem}{\rep@title}
+\newcommand{\newreptheorem}[2]{%
+\newenvironment{rep#1}[1]{%
+ \def\rep@title{#2 \ref{##1}}%
+ \begin{rep@theorem}}%
+ {\end{rep@theorem}}}
+
+% Only sections appear in TOC
+\setcounter{tocdepth}{1}
+
+\newtheorem{theorem}{Theorem}[section]
+\newreptheorem{theorem}{Theorem}
+\newtheorem*{untheorem}{Theorem}
+
+\newtheorem{lemma}[theorem]{Lemma}
+
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{example}[theorem]{Example}
+
+\theoremstyle{definition}
+\newtheorem{question}[theorem]{Question}
+
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+\newtheorem{manualtheoreminner}{Theorem}
+\newenvironment{manualtheorem}[1]{%
+  \renewcommand\themanualtheoreminner{#1}%
+  \manualtheoreminner
+}{\endmanualtheoreminner}
+
+\usepackage[margin=1in]{geometry}
+
+\usepackage{enumerate}
+\usepackage{xcolor}
+
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+
+\usepackage[textwidth=25mm]{todonotes}
+\newcommand{\marginremark}[3][]{\todo[#2,color=blue!40]{#1: #3}}
+
+\newcommand*{\incfig}[2][1]{%
+    \def\svgscale{#1}
+    \import{./images/}{#2.pdf_tex}
+}
+
+% To be uncommented if we need autorefnames
+% \def\sectionautorefname{Section}
+% \def\thmautorefname{Theorem}
+% \def\lemautorefname{Lemma}
+
+%% this code removes 0 subsection numbers
+%% so you get Definition 1.1 instead of Definition 1.0.1
+\makeatletter
+\renewcommand{\thesubsection}{%
+  \ifnum\c@subsection<1 \@arabic\c@section
+  \else \thesection.\@arabic\c@subsection
+  \fi
+}
+\makeatother

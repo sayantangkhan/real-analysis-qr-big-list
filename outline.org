@@ -1,0 +1,10 @@
+#+STARTUP: overview
+#+STARTUP: latexpreview
+#+TITLE: Outline of paper
+#+AUTHOR: Sayantan Khan
+
+#+LaTeX_HEADER: \usepackage[extreme]{savetrees}
+#+LaTeX_HEADER: \usepackage[utf8]{inputenc}
+#+LaTeX_HEADER: \thispagestyle{empty}
+
+* Introduction
