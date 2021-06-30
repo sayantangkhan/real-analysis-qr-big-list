@@ -82,6 +82,8 @@
 \makeatother
 
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
 
 \begin{document}
 \maketitle
@@ -228,6 +230,85 @@ Prove that $h \in L_1(\mathbb R)$ and $\|h\|_1 \le \|f\|_1 \cdot \|g\|_1$.
 \end{enumerate}
 \end{problem}
 
+\begin{problem}{January 2012}{measurable functions}
+  Let $f : [a,b] \to \R$ be a differentiable function.  Prove that the function $f'$ is measurable.
+\end{problem}
+
+\begin{problem}{January 2012}{$L^p$ spaces}
+  Let $1 \le p < \infty$, and let $f \in L_p(\mu)$. Prove that
+\[
+ \lim_{t \to 0} t^p \mu \{x \mid |f(x)|>t \} =0.
+\]
+\end{problem}
+
+\begin{problem}{January 2012}{Lebesgue differentiation theorem, Hardy-Littlewood maximal estimate?}
+  Let  $f \in L_1(\R)$.
+  For $n \in \N$ define the function $g_n: \R \to \R$ as follows.  For $k \in \Z$ and for $x \in [k/n,(k+1)/n)$ set
+\[
+ g_n(x)=n \int_{k/n}^{(k+1)/n} f (x) \, dx.
+\]
+Prove that $g_n$ converges to $f$ a.e. and in $L_1(\R)$.
+\end{problem}
+
+\begin{problem}{January 2012}{integral convergence}
+  Let $(X, \mathcal{A}, \mu)$ be a finite measure space ($\mu(X)< \infty$). Assume that a sequence $\{f_n\}_{n=1}^{\infty} \subseteq L_1(\mu)$ satisfies the condition
+\[
+  \frac{1}{\sqrt{\mu(E)}} \int_E |f_n| \, d\mu \le 1
+\]
+for all $n \in \N$ and all sets $E$ of positive measure. Prove that if $f_n \to f$ a.e., then $f \in L_1(\mu)$ and
+\[
+  \int_X f_n \, d \mu \to \int_X f \, d \mu.
+ \]
+\end{problem}
+
+\begin{problem}{January 2012}{$L^p$ spaces}
+  Construct a function $f \in L_1(\R)$ such that $f \notin L_2((a,b))$ for any interval $(a,b) \subseteq \R$.
+\end{problem}
+
+\begin{problem}{September 2019}{countable subadditivity?}
+  Let $E$ be the set of all $x\in(0,1)$ such that there exists  a sequence of irreducible fractions
+$\{p_n/q_n\}_{n\in\mathbb{N}}$ with $p_n,q_n\in\mathbb{N}, \ q_1<q_2<\cdots$ such that
+$$
+\left|x-\frac{p_n}{q_n}\right| \ \le \ \frac{1}{q_n^3} \ , \quad n=1,2,...
+$$
+Prove that the Lebesgue measure of $E$ is zero.
+\end{problem}
+
+\begin{problem}{September 2019}{integral convergence}
+  Let  $f$ be a measurable function on $(0,\infty)$, and for $n=1,2,\ldots$ let
+$f_n$ be defined by
+$$
+f_n(x)=f(x)e^{-x}\left[1+x+\frac{x^2}{2!}+\cdots+\frac{x^n}{n!}\right] \ .
+$$
+Suppose $f \in L^2[(0,\infty)]$. Prove that $\lim_{n\to \infty}\|f_n-f\|_{L^2[(0,\infty)]}=0$
+\end{problem}
+
+\begin{problem}{September 2019}{Fubini, Hölder}
+    Let $f:\mathbb{R}\times (0,1)\to\mathbb{R}$ be a measurable function such that for any $y\in(0,1)$,
+$$\int_{\mathbb{R}} f^2(x,y) \ dx \ \le \ 1\  .
+$$
+Prove there exists a sequence $\{x_n\}_{n\in\mathbb{N}}$, with $\lim_{n\to\infty}x_n=+\infty$, such that
+$$\lim_{n\to\infty} \int_0^1 |f(x_n,y)| \ dy \ = \ 0 \  .
+$$
+\end{problem}
+
+\begin{problem}{September 2019}{Hölder}
+  Let $(X,\Omega,\mu)$ be a measure space with $\mu(X)=1$, and let $f\in L^2(\mu)$ be a non-negative function satisfying $\int_X f \ d\mu\ge 1$. Prove that
+$$
+\mu\left(\{x\in X  \mid \ f(x)>1\}\right) \ \ge \  \frac{\left(\int_{X} f \ d\mu-1\right)^2}{\int_X f^2 \ d\mu} \ .
+$$
+\end{problem}
+
+\begin{problem}{September 2019}{absolute continuity}
+   A function $f:(0,1)\to\mathbb{R}$ is locally Lipschitz if for   any $x\in(0,1)$ there is an open interval $I_x$ with $x\in I_x\subset (0,1)$ and a constant $C_x$ such that $|f(y)-f(y')|\le C_x|y-y'|$ for $y,y'\in I_x$.
+
+\begin{enumerate}[(a)]
+\item Prove that a locally Lipschitz function $f(\cdot)$ is absolutely continuous on any compact subinterval
+$[a,b]\subset (0,1)$.
+
+\item  Give an example of a locally Lipschitz function $f:(0,1)\to\mathbb{R}$ which extends to a continuous function on the closed interval $[0,1]$, but is not absolutely continuous on $[0,1]$.
+\end{enumerate}
+\end{problem}
 
 \section{Categorized (with solutions)}
 
@@ -241,21 +322,6 @@ Prove that $h \in L_1(\mathbb R)$ and $\|h\|_1 \le \|f\|_1 \cdot \|g\|_1$.
    \inf_{m(A)=a} \int_A f \, dm >0.
  \]
  \item Does the previous statement hold for a function $f \in L_1(\mathbb R)$ such that $f(x)>0$ a.e.
- \end{enumerate}
-\end{problem}
-
-\begin{problem}{January 2011}{}
- Let $(X,\Omega, \mu)$ be a finite measure space.
- \begin{enumerate}[(i)]
-   \item Prove that for any $p<q, \ L_q(\mu) \subset L_p(\mu)$.
-   \item Assume that for any
- $t>0$ there exists $E \in \Omega$ satisfying
- \[
-  0< \mu(E) <t.
- \]
- Prove that for any $1<p< \infty$ there exists a function $f \in
- L_p(\mu)$ such that $f \notin L_q(\mu)$ for any $q>p$.
-
  \end{enumerate}
 \end{problem}
 
