@@ -84,6 +84,7 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\N}{\mathbb{N}}
+\newcommand{\norm}[1]{{\left\|#1\right\|}}
 
 \begin{document}
 \maketitle
@@ -308,6 +309,67 @@ $[a,b]\subset (0,1)$.
 
 \item  Give an example of a locally Lipschitz function $f:(0,1)\to\mathbb{R}$ which extends to a continuous function on the closed interval $[0,1]$, but is not absolutely continuous on $[0,1]$.
 \end{enumerate}
+\end{problem}
+
+\begin{problem}{May 2020}{outer regularity}
+  Let $E \subset (0,1)$ be a measurable set such that for any interval $(a,b) \subset (0,1)$, there exists an interval $(c,d) \subset (a,b) \setminus E$ with 
+ \[
+  d-c \ge \frac{a}{10} (b-a).
+ \]
+ Prove that $m(E)=0$.
+
+\end{problem}
+
+\begin{problem}{May 2020}{bounded variation}
+  Let $f:\mathbb{R}\to\mathbb{R}$ be a Lebesgue measurable function such that
+$$
+f(y) \ \le \ f(x)+(x^2+y^2)(x-y) \quad {\rm for \ } -\infty<y<x<\infty \ .
+$$
+Show that the derivative function $x\to f'(x)$ exists a.e. on $\mathbb{R}$. 
+\end{problem}
+
+\begin{problem}{May 2020}{triangle inequality?}
+  Let $r_n, \ n=1,2,\ldots,$ be an enumeration of the rationals in the interval $[0,1]$ and consider the function  $f:[0,1]\to\mathbb{R}\cup{\infty}$ defined by
+$$
+f(x) \ = \ \sum_{n=1}^\infty \frac{1}{n^2}\frac{1}{|x-r_n|^{1/3}} \ , \quad 0\le x\le 1 \ .
+$$
+Show that $f\in L^2(0,1)$. 
+\end{problem}
+
+\begin{problem}{May 2020}{change of variables, integral convergence}
+  Let $f_n, \ n=1,2,...,$ be the sequence of functions on $(0,\infty)$ defined by
+$$
+f_n(x) \ = \ \frac{1}{n}\left(1-\frac{x}{n}\right)^n e^{x} \ ,  \ \ 0<x<n, \quad f_n(x)=0, \ \ x\ge n.
+$$
+Prove that the sequence $a_n, \ n=1,2,\dots,$ given by
+$$
+a_n \ = \ \int_0^\infty f_n(x) \ dx \quad {\rm converges \ and \ identify \ } a_\infty=\lim_{n\to\infty} a_n.
+$$
+\end{problem}
+
+\begin{problem}{May 2020}{$L^p$ spaces}
+Suppose $f$ is a $C^1$ function on $\mathbb{R}$ satisfying $f(0)=0, \ |f(x)|\le |x|^{-1/2}, \ x\ne 0$. Let $g$ be in  $L^1(\mathbb{R})$.
+\begin{enumerate}[(a)]
+\item Show there is a constant $C$ such that $m\{|g|>\alpha\}\le C/\alpha$ for all $\alpha>0$. 
+
+\item Show that the function $h(x)=f(g(x))$ is in $L^1(\mathbb{R})$.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}{May 2011}{integral convergence}
+  Let $f_n,g_n,f,g \in L_1(\mu)$ be functions such that
+    $f_n \to f$ a.e., $g_n \to g$ a.e. and $|f_n| \le g_n$. Prove
+    that if $\int g_n \, d \mu \to \int g \, d \mu$, then
+    $\int f_n \, d \mu \to \int f \, d \mu$.
+
+    (Hint: use Fatou's Lemma.)
+\end{problem}
+
+\begin{problem}{May 2011}{Egorov's theorem}
+  Let $\{f_n: [0,1] \to \R\}_{n=1}^\infty$ be a sequence of continuous functions
+     such that $f_n(x) \to f(x)$ for any $x \in [0,1]$. Does there
+     exist a set $E \subset [0,1]$ of Lebesgue measure 0 such that
+     $f_n \to f$ uniformly on $[0,1] \setminus E$?
 \end{problem}
 
 \section{Categorized (with solutions)}
