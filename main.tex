@@ -113,12 +113,6 @@ These environments do not take any arguments.
 
 \section{Categorized (without solutions)}
 
-\begin{problem}{September 2011}{integral convergence}
-Let $f \in L_1([0,1], dx)$. Find
- \[
-   \lim_{n \to \infty} \frac{1}{n}  \int_0^1 \log \left( 1+ e^{nf(x)} \right) \, dx.
- \]
-\end{problem}
 
 \begin{problem}{September 2011}{bounded variation}
   Suppose $f:[0,1] \to \R$ satisfies $f(x)-f(y)<x-y$ for all $x,y\in [0,1], x>y$.
@@ -356,16 +350,6 @@ $$
 Show that $f\in L^2(0,1)$.
 \end{problem}
 
-\begin{problem}{May 2020}{change of variables, integral convergence}
-  Let $f_n, \ n=1,2,...,$ be the sequence of functions on $(0,\infty)$ defined by
-$$
-f_n(x) \ = \ \frac{1}{n}\left(1-\frac{x}{n}\right)^n e^{x} \ ,  \ \ 0<x<n, \quad f_n(x)=0, \ \ x\ge n.
-$$
-Prove that the sequence $a_n, \ n=1,2,\dots,$ given by
-$$
-a_n \ = \ \int_0^\infty f_n(x) \ dx \quad {\rm converges \ and \ identify \ } a_\infty=\lim_{n\to\infty} a_n.
-$$
-\end{problem}
 
 \begin{problem}{May 2020}{$L^p$ spaces}
 Suppose $f$ is a $C^1$ function on $\mathbb{R}$ satisfying $f(0)=0, \ |f(x)|\le |x|^{-1/2}, \ x\ne 0$. Let $g$ be in  $L^1(\mathbb{R})$.
@@ -381,7 +365,6 @@ Suppose $f$ is a $C^1$ function on $\mathbb{R}$ satisfying $f(0)=0, \ |f(x)|\le 
     $f_n \to f$ a.e., $g_n \to g$ a.e. and $|f_n| \le g_n$. Prove
     that if $\int g_n \, d \mu \to \int g \, d \mu$, then
     $\int f_n \, d \mu \to \int f \, d \mu$.
-
     (Hint: use Fatou's Lemma.)
 \end{problem}
 
@@ -393,6 +376,34 @@ Suppose $f$ is a $C^1$ function on $\mathbb{R}$ satisfying $f(0)=0, \ |f(x)|\le 
 \end{problem}
 
 \section{Categorized (with solutions)}
+
+\begin{problem}{September 2011}{integral convergence}
+Let $f \in L_1([0,1], dx)$. Find
+ \[
+   \lim_{n \to \infty} \frac{1}{n}  \int_0^1 \log \left( 1+ e^{nf(x)} \right) \, dx.
+ \]
+\end{problem}
+\begin{sketch}
+Step 1: Consider pointwise convergence in two different sets: $f(x) \leq 0$ and $f(x) > 0$.
+Step 2: Use convergence theorems in these two domains to get convergence of integral.
+\end{sketch}
+
+\begin{problem}{May 2020}{change of variables, integral convergence}
+  Let $f_n, \ n=1,2,...,$ be the sequence of functions on $(0,\infty)$ defined by
+$$
+f_n(x) \ = \ \frac{1}{n}\left(1-\frac{x}{n}\right)^n e^{x} \ ,  \ \ 0<x<n, \quad f_n(x)=0, \ \ x\ge n.
+$$
+Prove that the sequence $a_n, \ n=1,2,\dots,$ given by
+$$
+a_n \ = \ \int_0^\infty f_n(x) \ dx \quad {\rm converges \ and \ identify \ } a_\infty=\lim_{n\to\infty} a_n.
+$$
+\end{problem}
+
+\begin{sketch}
+Step 1: Change variables so that all integrals are over $[0,1]$.
+Step 2: Observe that the new integrand is converging pointwise to $0$ a.e.
+Step 3: Use monotone/dominated convergence theorem.
+\end{sketch}
 
 \section{Uncategorized}
 
