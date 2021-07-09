@@ -111,6 +111,9 @@ To add a problem to this list, use the \texttt{problem} environment: this enviro
 To add a solution, or a solution sketch, use the \texttt{solution} and \texttt{sketch} environments.
 These environments do not take any arguments.
 
+\subsection*{Notation}
+Unless otherwise specified, $m$ refers to the Lebesgue measure on $\mathbb{R}^n$ and subsets of $\mathbb{R}^n$, and $m^{\ast}$ refers to the Lebesgue outer measure.
+
 \section{Categorized (without solutions)}
 
 
@@ -375,6 +378,156 @@ Suppose $f$ is a $C^1$ function on $\mathbb{R}$ satisfying $f(0)=0, \ |f(x)|\le 
      $f_n \to f$ uniformly on $[0,1] \setminus E$?
 \end{problem}
 
+\begin{problem}{January 2015}{simple function approximation}
+Let $f$ be a nonnegative measurable function on $(0,1)$. Assume that there is a constant $c$, such that
+$$\int_0^1 (f(x))^n\,dx=c,\qquad n=1,2,\dots$$
+Show that there is a measurable set $E\subset (0,1)$, such that
+$$f(x)=\chi_E(x),\qquad \text{ for a.e. }  x\in(0,1).$$
+\end{problem}
+
+\begin{problem}{January 2015}{h\"older's inequality}
+Let $f$ be locally integrable on $\mathbb R^n$, $1<p<\infty$. Show that the following are equivalent:
+
+\begin{enumerate}[(1)]
+    \item $f\in L^p(\mathbb R^n)$.
+    \item there exist $M>0$, such that for any finite collection of mutually disjoint measurable sets $E_1, E_2,\dots, E_k$, with $0<m(E_i) <\infty$ for $1\le i\le k$, 
+$$\sum_{i=1}^k \left(\frac1{m(E_i)}\right)^{p-1}\left|\int_{E_i} f(x)\,dx\right|^p\le M.$$
+\end{enumerate}
+\end{problem}
+
+\begin{problem}{January 2011}{}
+  Let $f \in L_1([0,1])$ be a function such that $f(x)>0$ a.e.
+ \begin{enumerate}[(i)]
+ \item Prove that for any $0<a<1$
+ \[
+   \inf_{m(A)=a} \int_A f \, dm >0.
+ \]
+ \item Does the previous statement hold for a function $f \in L_1(\mathbb R)$ such that $f(x)>0$ a.e.
+ \end{enumerate}
+\end{problem}
+
+\begin{problem}{January 2015}{Egorov's theorem}
+Let $E_k\subset [a,b]$, $k\in\mathbb N$ be measurable sets, and there exists $\delta>0$ such that $m(E_k)\ge \delta$ for all $k$.
+ Assume that $a_k\in\mathbb R$ satisfies 
+$$\sum_{k=1}^\infty |a_k|\chi_{E_k}(x)<\infty\qquad \text{ for a.e. }  x\in [a,b].$$
+Show that
+$$\sum_{k=1}^\infty |a_k|<\infty.$$
+(For extra challenge, find a proof that does not use Egorov's theorem).
+\end{problem}
+
+\begin{problem}{January 2015}{Carath\'eodory's criterion}
+Let $A, B\subset \mathbb R^d$. Assume $A\cup B$ is measurable, and $m(A\cup B)<\infty$. If
+$$m(A\cup B)=m^*(A)+m^*(B)$$
+Show that $A$ and $B$ are measurable. 
+
+(Hint: prove first that for any set $A$, there a measurable set $U$, with $A\subset U$, such that $m^*(A)=m(U)$.)
+\end{problem}
+
+\begin{problem}{September 2014}{fat Cantor set}
+Construct a measurable subset $A$ of $(0,1)$ such that $m(A)<1$ and 
+ $m \big(A \cap (a,b) \big) >0$ for any $(a,b) \subset (0,1)$.
+\end{problem}
+
+\begin{problem}{September 2014}{integrability?}
+Let $\{f_k(x)\}$ be a sequence of nonnegative measurable functions on $E$ and $m(E)<\infty$. Show that $\{f_k(x)\}$ converges in measure to $0$ if and only if 
+$$\lim_{k\to\infty}\int_E\frac{f_k(x)}{1+f_k(x)}\,dx=0.$$
+\end{problem}
+
+\begin{problem}{September 2014}{integrability?}
+Let $1\le p<\infty$, $f\in L^p(\mathbb R^n)$. Let
+$$f_*(\lambda)=m(\{x: |f(x)|>\lambda\}), \quad \lambda>0$$
+Show that 
+
+\begin{enumerate}[(i)]
+\item$p\int_0^\infty \lambda^{p-1} f_*(\lambda)\,d\lambda= \int |f(x)|^p\,dx$
+\item  $\lim_{\lambda\to\infty}\lambda^p f_*(\lambda)=0,\qquad \lim_{\lambda\to 0}\lambda^p f_*(\lambda)=0$
+\end{enumerate}
+\end{problem}
+
+\begin{problem}{September 2014}{H\"older's inequality}
+Let $K=\{f :(0,+\infty) \to \R \mid \int_0^{\infty} f^4(x) \, dx \le 1  \}$. Evaluate
+\[
+  \sup_{f \in K} \int_0^\infty f^3(x) e^{-x}  \, dx.
+\]
+\end{problem}
+
+\begin{problem}{September 2014}{Lebesgue differentiation}
+Let  $f: \R \to \R$ be a function such that $\int_{\R} |f(x)| \, dx < \infty$. Show that the sequence
+\[
+ h_n(x)=\frac{1}{n} \sum_{k=1}^n f \left(x+ \frac{k}{n} \right)
+\]
+converges in $L_1(\R)$.
+\end{problem}
+
+\begin{problem}{January 2014}{outer regularity}
+Prove or disprove:  If $E$ is an open subset of $\R$ with $m(E)=1$ then there is a finite union of intervals $F$ containing $E$ with $m(F)<1.1$.
+\end{problem}
+
+\begin{problem}{January 2014}{Density of smooth/simple functions}
+Let $f\in L_1\cap L_4$ (on some measure space).  Prove that the function defined on $[1,4]$, given by the following formula
+\begin{align*}
+p & \mapsto \|f\|_p
+\end{align*}
+ is continuous.
+\end{problem}
+
+\begin{problem}{January 2014}{H\"older's inequality}
+Find all $q \ge 1$, such that $f(x^2) \in L_q((0,1),m)$ for any $f(x)  \in L_4((0,1),m)$, where $m$ denotes the Lebesgue measure.
+\end{problem}
+
+\begin{problem}{January 2014}{Fubini}
+Let 
+\begin{align*}
+E &\subset \{(x,y) \mid 0 \le x \le 1, \ 0 \le y \le x\}\\
+E_x &= \{y\mid (x,y)\in E\}\\
+E_y &= \{x\mid (x,y)\in E\}
+\end{align*}
+and assume that $m(E_x) \ge x^3$ for any $x \in [0,1]$.  
+\begin{enumerate}[(i)]
+ \item Prove that there exists $y \in [0,1]$ such that $m(E_y) \ge \dfrac{1}{4}$.
+ %\medskip
+ \item (Hard) Prove that there exists $y \in [0,1]$ such that $m(E_y) \ge c$, where $c>1/4$ is a constant independent of $E$. Find the optimal such $c$. 
+ %optimal value 1-\dfrac{1}{\sqrt{2}}
+\end{enumerate}
+\end{problem}
+
+\begin{problem}{January 2014}{Hardy-Littlewood maximal inequality}
+Let $E \subset [0,1]$ be a measurable set, $m(E) \ge \dfrac{99}{100}$. Prove that there exists $x \in [0,1]$ such that for any $r \in (0,1)$,
+    \[
+      m \big( E \cap (x-r,x+r) \big) \ge \frac{r}{4}.
+    \]
+
+\emph{Hint:} One approach to this problem involves the Hardy-Littlewood maximal inequality.
+\end{problem}
+
+\begin{problem}{2013 draft}{basic measure theory}
+Let $(X, \mathcal{A},\mu)$ be a finite measure space. For a set $A \subset X$ define $\mu_*(A)=\mu(X)-\mu^*(X \setminus A)$, where $\mu^*$ is the outer measure. Prove that $\mu_*(A) \le \mu^*(A)$ for any $A \subset X$.
+\end{problem}
+
+\begin{problem}{2013 draft}{basic measure theory}
+Let $A \subset [0,1] \times [0,1]$ be the set of points $(x,y)$ with decimal representations $x=0.x_1 x_2 \ldots, \ \  y=0.y_1 y_2 \ldots$ such that  $x_n y_n=5$ for all $n \in \N$. Prove that the set $A$ is measurable and find its Lebesgue measure.
+\end{problem}
+
+\begin{problem}{2013 draft}{convergence in measure}
+Let $f_1, f_2, \ldots, f, g$ be measurable functions on a measure space  $(X, \mathcal{A},\mu)$. Assume that $f_n \to f$ in measure and $f_n \le g$ a.e. Prove that $f \le g$ a.e.
+\end{problem}
+
+\begin{problem}{2013 draft}{basic measure theory}
+Let $\{x_n\}_{n=1}^{\infty} \subset [0,1]$ be any sequence. For $n \in \N$ define the set $A_n \subset \R$ by
+  \[
+   A_k=\bigcup_{n=k}^{\infty} \left(x_n-\frac{k}{n^3}, x_n+ \frac{k}{n^3} \right).
+  \]
+  Prove that $m(\bigcap_{k=1}^{\infty} A_k)=0$, where $m$ denotes the Lebesgue measure.
+\end{problem}
+
+\begin{problem}{2013 draft}{integral convergence}
+Prove that
+  \[
+   \lim_{n \to \infty} \int_\R \frac{\cos^{n} (\pi  x)}{(x-n)^2+1} \, dx
+  \]
+  exists and find it.
+\end{problem}
+
 \section{Categorized (with solutions)}
 
 \begin{problem}{September 2011}{integral convergence}
@@ -407,15 +560,75 @@ Step 3: Use monotone/dominated convergence theorem.
 
 \section{Uncategorized}
 
-\begin{problem}{January 2011}{}
-  Let $f \in L_1([0,1])$ be a function such that $f(x)>0$ a.e.
- \begin{enumerate}[(i)]
- \item Prove that for any $0<a<1$
- \[
-   \inf_{m(A)=a} \int_A f \, dm >0.
- \]
- \item Does the previous statement hold for a function $f \in L_1(\mathbb R)$ such that $f(x)>0$ a.e.
- \end{enumerate}
+\begin{problem}{2013 draft}{}
+Let $\mu_1 \le \mu_2 \le \ldots$ be a sequence of
+    positive absolutely continuous measures on a measure space $(X,
+    \mathcal{A},\rho)$. Assume that there exists a finite positive measure
+    $\nu$ such that $\mu_n \le \nu$ for all $n\in \N$. For $A \in
+    \mathcal{A}$ set $\mu(A) = \lim_{n \to \infty} \mu_n(A)$. Prove
+    that $\mu$ is an absolutely continuous measure.
+
+    (Hint: use Lebesgue--Radon--Nikodym Theorem.)
+\end{problem}
+
+\begin{problem}{2013 draft}{}
+Let $f_1, f_2, \ldots,f: [0,1] \to \R$ be non-decreasing functions such that $\sum_{n=1}^{\infty} f_n =f$. Prove that $\sum_{n=1}^{\infty} f_n' =f'$ a.e.
+\end{problem}
+
+\begin{problem}{2013 draft}{}
+(Hard) Prove that the sequence
+    \[
+     f_n(x)= n^{1/2} \exp \left(- \frac{n^2x^2}{x+1} \right)
+    \]
+    converges in $L_p([0,+\infty))$ for $1 \le p<2$ and diverges for $p \ge 2$.
+\end{problem}
+
+\begin{problem}{2013 draft}{}
+Let  $(X, \mathcal{A},\mu)$ be a $\sigma$-finite measure space with $\mu(X)=\infty$. Construct a function $F: X \to \R$ such that $F \in L_p(\mu)$ for all $p>1$, but $F \notin L_1(\mu)$.
+\end{problem}
+
+\begin{problem}{2013 draft}{}
+(Hard?) Let $K=\{f :(0,+\infty) \to \R \mid \int_0^{\infty} f^4(x) \, dx \le 1  \}$. Evaluate
+\[
+  \sup_{f \in K} \int_0^\infty \frac{f^3(x)}{1+x}  \, dx.
+\]
+\end{problem}
+
+\begin{problem}{2013 draft}{}
+Let $E \subset \{(x,y) \mid 0 \le x \le 1, \ 0 \le y \le x$, and assume that $m(E_x) \ge x^3$ for any $x \in [0,1]$. Prove that there exists $y \in [0,1]$ such that 
+\begin{enumerate}[(i)]
+ \item $m(E_y) \ge \frac{1}{4}$;
+ \item $m(E_y) \ge \frac{3}{8}$; 
+\end{enumerate}
+\end{problem}
+
+\begin{problem}{2013 draft}{}
+\begin{enumerate}[(i)]
+   \item (Easy) Let $E \subset [0,1]$ be a measurable set, $m(E) \ge \frac{99}{100}$. Prove that there exists $x \in [0,1]$ such that for any $r \in (0,1)$,
+    \[
+      m \big( E \cap (x-r,x+r) \big) \ge \frac{r}{4}.
+    \]
+    \item (Hard) Let $E \subset [0,1]$ be a measurable set, $m(E) \ge \frac{1}{2}$. Prove that there exists $x \in [0,1]$ such that for any $r \in (0,1)$,
+    \[
+      m \big(E \cap (x-r,x+r) \big) \ge \frac{r}{20}.
+    \]
+\end{enumerate}
+\end{problem}
+
+\begin{problem}{2013 draft}{}
+Find all $q \ge 1$, such that $f(x^2) \in L_q((0,1))$ for any $f  \in L_4((0,1))$.
+\end{problem}
+
+\begin{problem}{2013 draft}{}
+Let $E_n, \ n \in \N$ be measurable sets. Prove that the set of $x \in \R$ for which there exists at most 3 values of $n$ such that $x \in E_k$, but $x \notin E_{k^n}$ for all $n \in \N \setminus \{1\}$ is measurable.
+\end{problem}
+
+\begin{problem}{2013 draft}{}
+(Hard) Let $g: \R \to (0,+\infty)$ be a 1-periodic function, and assume that $g \in L_1(0,1)$. Prove that if $f_n \to 0$ a.e. on $(0,1)$, and
+    \[
+     |f_n(x)| \le g(nx) \quad \text{for all } x \in (0,1),
+    \]
+    then $\int_0^1f_n (x) \, dx \to 0$.
 \end{problem}
 
 \end{document}
