@@ -97,7 +97,7 @@
 \begin{document}
 \maketitle
 
-%\tableofcontents
+\tableofcontents
 
 \section*{How to add to this document}
 This document contains a subset of the old real analysis qual problems, and solutions to some of them.
@@ -116,30 +116,107 @@ Unless otherwise specified, $m$ refers to the Lebesgue measure on $\mathbb{R}^n$
 
 \section{Categorized (without solutions)}
 
+\subsection{Basic measure theory and integrability}
 
-\begin{problem}{September 2011}{bounded variation}
-  Suppose $f:[0,1] \to \R$ satisfies $f(x)-f(y)<x-y$ for all $x,y\in [0,1], x>y$.
-  Show that $f'$ exists almost everywhere on $[0,1]$ or give a counterexample.
+
+\begin{problem}{2013 draft}{basic measure theory}
+Let $(X, \mathcal{A},\mu)$ be a finite measure space. For a set $A \subset X$ define $\mu_*(A)=\mu(X)-\mu^*(X \setminus A)$, where $\mu^*$ is the outer measure. Prove that $\mu_*(A) \le \mu^*(A)$ for any $A \subset X$.
 \end{problem}
 
-\begin{problem}{September 2011}{hölder's inequality}
-  Let $(X,\Omega, \mu)$ be a finite measure space.
- \begin{enumerate}[(i)]
-   \item Prove that for any $p<q, \ L_q(\mu) \subset L_p(\mu)$.
-   \item Assume that for any
- $t>0$ there exists $E \in \Omega$ satisfying
- \[
-  0< \mu(E) <t.
- \]
- Prove that for any $1<p< \infty$ there exists a function $f \in
- L_p(\mu)$ such that $f \notin L_q(\mu)$ for any $q>p$.
+\begin{problem}{2013 draft}{basic measure theory}
+Let $A \subset [0,1] \times [0,1]$ be the set of points $(x,y)$ with decimal representations $x=0.x_1 x_2 \ldots, \ \  y=0.y_1 y_2 \ldots$ such that  $x_n y_n=5$ for all $n \in \N$. Prove that the set $A$ is measurable and find its Lebesgue measure.
+\end{problem}
+
+\begin{problem}{2013 draft}{convergence in measure}
+Let $f_1, f_2, \ldots, f, g$ be measurable functions on a measure space  $(X, \mathcal{A},\mu)$. Assume that $f_n \to f$ in measure and $f_n \le g$ a.e. Prove that $f \le g$ a.e.
+\end{problem}
+
+\begin{problem}{2013 draft}{basic measure theory}
+Let $\{x_n\}_{n=1}^{\infty} \subset [0,1]$ be any sequence. For $n \in \N$ define the set $A_n \subset \R$ by
+  \[
+   A_k=\bigcup_{n=k}^{\infty} \left(x_n-\frac{k}{n^3}, x_n+ \frac{k}{n^3} \right).
+  \]
+  Prove that $m(\bigcap_{k=1}^{\infty} A_k)=0$, where $m$ denotes the Lebesgue measure.
+\end{problem}
+
+\begin{problem}{January 2014}{outer regularity}
+Prove or disprove:  If $E$ is an open subset of $\R$ with $m(E)=1$ then there is a finite union of intervals $F$ containing $E$ with $m(F)<1.1$.
+\end{problem}
+
+\begin{problem}{September 2014}{integrability?}
+Let $\{f_k(x)\}$ be a sequence of nonnegative measurable functions on $E$ and $m(E)<\infty$. Show that $\{f_k(x)\}$ converges in measure to $0$ if and only if
+$$\lim_{k\to\infty}\int_E\frac{f_k(x)}{1+f_k(x)}\,dx=0.$$
+\end{problem}
+
+\begin{problem}{September 2014}{integrability?}
+Let $1\le p<\infty$, $f\in L^p(\mathbb R^n)$. Let
+$$f_*(\lambda)=m(\{x: |f(x)|>\lambda\}), \quad \lambda>0$$
+Show that
+
+\begin{enumerate}[(i)]
+\item$p\int_0^\infty \lambda^{p-1} f_*(\lambda)\,d\lambda= \int |f(x)|^p\,dx$
+\item  $\lim_{\lambda\to\infty}\lambda^p f_*(\lambda)=0$
+\item $\lim_{\lambda\to 0}\lambda^p f_*(\lambda)=0$
 \end{enumerate}
 \end{problem}
 
-\begin{problem}{September 2011}{$L^p$ spaces}
-  For a real valued function $f(x,y)$ on $\mathbb R^2$ which is in $L^2$, show that $f(x+\epsilon,y+\epsilon) \rightarrow f(x,y)$ in $L^2$ when $\epsilon \rightarrow 0$.
+\begin{problem}{September 2014}{fat Cantor set}
+Construct a measurable subset $A$ of $(0,1)$ such that $m(A)<1$ and
+ $m \big(A \cap (a,b) \big) >0$ for any $(a,b) \subset (0,1)$.
 \end{problem}
 
+\begin{problem}{January 2015}{Carath\'eodory's criterion}
+Let $A, B\subset \mathbb R^d$. Assume $A\cup B$ is measurable, and $m(A\cup B)<\infty$. If
+$$m(A\cup B)=m^*(A)+m^*(B)$$
+Show that $A$ and $B$ are measurable.
+
+(Hint: prove first that for any set $A$, there a measurable set $U$, with $A\subset U$, such that $m^*(A)=m(U)$.)
+\end{problem}
+
+\begin{problem}{January 2015}{simple function approximation}
+Let $f$ be a nonnegative measurable function on $(0,1)$. Assume that there is a constant $c$, such that
+$$\int_0^1 (f(x))^n\,dx=c,\qquad n=1,2,\dots$$
+Show that there is a measurable set $E\subset (0,1)$, such that
+$$f(x)=\chi_E(x),\qquad \text{ for a.e. }  x\in(0,1).$$
+\end{problem}
+
+\begin{problem}{May 2020}{$L^p$ spaces}
+Suppose $f$ is a $C^1$ function on $\mathbb{R}$ satisfying $f(0)=0, \ |f(x)|\le |x|^{-1/2}, \ x\ne 0$. Let $g$ be in  $L^1(\mathbb{R})$.
+\begin{enumerate}[(a)]
+\item Show there is a constant $C$ such that $m\{|g|>\alpha\}\le C/\alpha$ for all $\alpha>0$.
+\item Show that the function $h(x)=f(g(x))$ is in $L^1(\mathbb{R})$.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}{May 2020}{triangle inequality?}
+  Let $r_n, \ n=1,2,\ldots,$ be an enumeration of the rationals in the interval $[0,1]$ and consider the function  $f:[0,1]\to\mathbb{R}\cup{\infty}$ defined by
+$$
+f(x) \ = \ \sum_{n=1}^\infty \frac{1}{n^2}\frac{1}{|x-r_n|^{1/3}} \ , \quad 0\le x\le 1 \ .
+$$
+Show that $f\in L^2(0,1)$.
+\end{problem}
+
+\begin{problem}{May 2020}{outer regularity}
+  Let $E \subset (0,1)$ be a measurable set such that for any interval $(a,b) \subset (0,1)$, there exists an interval $(c,d) \subset (a,b) \setminus E$ with
+ \[
+  d-c \ge \frac{a}{10} (b-a).
+ \]
+ Prove that $m(E)=0$.
+
+\end{problem}
+
+\begin{problem}{September 2019}{countable subadditivity?}
+  Let $E$ be the set of all $x\in(0,1)$ such that there exists  a sequence of irreducible fractions
+$\{p_n/q_n\}_{n\in\mathbb{N}}$ with $p_n,q_n\in\mathbb{N}, \ q_1<q_2<\cdots$ such that
+$$
+\left|x-\frac{p_n}{q_n}\right| \ \le \ \frac{1}{q_n^3} \ , \quad n=1,2,...
+$$
+Prove that the Lebesgue measure of $E$ is zero.
+\end{problem}
+
+\begin{problem}{January 2012}{$L^p$ spaces}
+  Construct a function $f \in L_1(\R)$ such that $f \notin L_2((a,b))$ for any interval $(a,b) \subseteq \R$.
+\end{problem}
 
 \begin{problem}{September 2011}{measurable sets?}
   Let $f \in L_1([0,1])$ be a function such that $\int_E f (x) \, dx=0$ for any measurable set $E \subset [0,1]$ of Lebesgue measure $1/2$.
@@ -152,14 +229,6 @@ Unless otherwise specified, $m$ refers to the Lebesgue measure on $\mathbb{R}^n$
     \item Prove that there exists $x \in [0,1]$ which belongs to infinitely many of the sets $A_n$.
     \item Does there necessarily exist a point which {\color{red} (does not?)} belong to any of the sets $A_n$, except finitely many?
    \end{enumerate}
-\end{problem}
-
-\begin{problem}{January 2011}{integral convergence}
-  Let $\{f_n\} \subset L_1(\mu)$ be a decreasing sequence of functions such that $f_n \to f$ a.e.
-  Prove that
-    \[
-      \lim_{n \to \infty} \int f_n \, d \mu = \int f \, d \mu.
-    \]
 \end{problem}
 
 \begin{problem}{January 2011}{simple function approximation}
@@ -179,30 +248,6 @@ Unless otherwise specified, $m$ refers to the Lebesgue measure on $\mathbb{R}^n$
     \end{enumerate}
 \end{problem}
 
-\begin{problem}{January 2011}{integral inequalities}
-  Let $f_n: \mathbb{R} \to [0, 1]$ be functions such that
- $\sup_{x \in \mathbb{R}} f_n(x)=1/n$ and $\int_{\mathbb{R}} f(x) \, dx=1$. Set
- \[
-  F(x)= \sup_{n \in \mathbb{N}} f_n(x).
- \]
- Find all possible values of $\int_{\mathbb{R}} F(x) \, dx$.
-
-\end{problem}
-
-\begin{problem}{January 2011}{integral convergence?}
-  Let $f \in L_{\infty}([0,1])$. Prove that
- \[
-   \lim_{n \to \infty} \frac{\int_{[0,1]} |f(x)|^{n+1} \, dx}{\int_{[0,1]} |f(x)|^{n} \, dx} = \|f\|_{\infty}.
- \]
-
-\end{problem}
-
-\begin{problem}{January 2011}{egoroff's theorem}
-  Let $E$ be the exceptional set in Egoroff's theorem.
-    Is it possible to prove Egoroff's theorem with
-    $\l(E)=0$ instead of $\l(E) < e$?
-\end{problem}
-
 \begin{problem}{January 2011}{simple functions}
   Let $f:X \to [0, \infty]$ be a measurable
  function. Assume that $\mu (X) < \infty$.
@@ -210,6 +255,67 @@ Unless otherwise specified, $m$ refers to the Lebesgue measure on $\mathbb{R}^n$
  \[
  \sum_{n=1}^{\infty} 2^n \mu (x \in X \mid f(x) \ge 2^n) < +\infty.
  \]
+\end{problem}
+
+\begin{problem}{January 2012}{measurable functions}
+  Let $f : [a,b] \to \R$ be a differentiable function.  Prove that the function $f'$ is measurable.
+\end{problem}
+
+\begin{problem}{January 2012}{$L^p$ spaces}
+  Let $1 \le p < \infty$, and let $f \in L_p(\mu)$. Prove that
+\[
+ \lim_{t \to 0} t^p \mu \{x \mid |f(x)|>t \} =0.
+\]
+\end{problem}
+
+\subsection{Integral convergence}
+
+\begin{problem}{2013 draft}{integral convergence}
+Prove that
+  \[
+   \lim_{n \to \infty} \int_\R \frac{\cos^{n} (\pi  x)}{(x-n)^2+1} \, dx
+  \]
+  exists and find it.
+\end{problem}
+
+\begin{problem}{May 2011}{integral convergence}
+  Let $f_n,g_n,f,g \in L_1(\mu)$ be functions such that
+    $f_n \to f$ a.e., $g_n \to g$ a.e. and $|f_n| \le g_n$. Prove
+    that if $\int g_n \, d \mu \to \int g \, d \mu$, then
+    $\int f_n \, d \mu \to \int f \, d \mu$.
+    (Hint: use Fatou's Lemma.)
+\end{problem}
+
+\begin{problem}{September 2019}{integral convergence}
+  Let  $f$ be a measurable function on $(0,\infty)$, and for $n=1,2,\ldots$ let
+$f_n$ be defined by
+$$
+f_n(x)=f(x)e^{-x}\left[1+x+\frac{x^2}{2!}+\cdots+\frac{x^n}{n!}\right] \ .
+$$
+Suppose $f \in L^2[(0,\infty)]$. Prove that $\lim_{n\to \infty}\|f_n-f\|_{L^2[(0,\infty)]}=0$
+\end{problem}
+
+\begin{problem}{January 2012}{integral convergence}
+  Let $(X, \mathcal{A}, \mu)$ be a finite measure space ($\mu(X)< \infty$). Assume that a sequence $\{f_n\}_{n=1}^{\infty} \subseteq L_1(\mu)$ satisfies the condition
+\[
+  \frac{1}{\sqrt{\mu(E)}} \int_E |f_n| \, d\mu \le 1
+\]
+for all $n \in \N$ and all sets $E$ of positive measure. Prove that if $f_n \to f$ a.e., then $f \in L_1(\mu)$ and
+\[
+  \int_X f_n \, d \mu \to \int_X f \, d \mu.
+ \]
+\end{problem}
+
+\begin{problem}{January 2011}{integral convergence}
+  Let $\{f_n\} \subset L_1(\mu)$ be a decreasing sequence of functions such that $f_n \to f$ a.e.
+  Prove that
+    \[
+      \lim_{n \to \infty} \int f_n \, d \mu = \int f \, d \mu.
+    \]
+\end{problem}
+
+\begin{problem}{September 2011}{$L^p$ spaces}
+  For a real valued function $f(x,y)$ on $\mathbb R^2$ which is in $L^2$, show that $f(x+\epsilon,y+\epsilon) \rightarrow f(x,y)$ in $L^2$ when $\epsilon \rightarrow 0$.
 \end{problem}
 
 \begin{problem}{January 2011}{dominated convergence}
@@ -232,6 +338,83 @@ Unless otherwise specified, $m$ refers to the Lebesgue measure on $\mathbb{R}^n$
 
 \end{problem}
 
+\subsection{Integral inequalities}
+
+\begin{problem}{January 2014}{Hardy-Littlewood maximal inequality}
+Let $E \subset [0,1]$ be a measurable set, $m(E) \ge \dfrac{99}{100}$. Prove that there exists $x \in [0,1]$ such that for any $r \in (0,1)$,
+    \[
+      m \big( E \cap (x-r,x+r) \big) \ge \frac{r}{4}.
+    \]
+
+\emph{Hint:} One approach to this problem involves the Hardy-Littlewood maximal inequality.
+\end{problem}
+
+\begin{problem}{January 2014}{H\"older's inequality}
+Find all $q \ge 1$, such that $f(x^2) \in L_q((0,1),m)$ for any $f(x)  \in L_4((0,1),m)$, where $m$ denotes the Lebesgue measure.
+\end{problem}
+
+\begin{problem}{September 2014}{H\"older's inequality}
+Let $K=\{f :(0,+\infty) \to \R \mid \int_0^{\infty} f^4(x) \, dx \le 1  \}$. Evaluate
+\[
+  \sup_{f \in K} \int_0^\infty f^3(x) e^{-x}  \, dx.
+\]
+\end{problem}
+
+\begin{problem}{September 2019}{Fubini, Hölder}
+    Let $f:\mathbb{R}\times (0,1)\to\mathbb{R}$ be a measurable function such that for any $y\in(0,1)$,
+$$\int_{\mathbb{R}} f^2(x,y) \ dx \ \le \ 1\  .
+$$
+Prove there exists a sequence $\{x_n\}_{n\in\mathbb{N}}$, with $\lim_{n\to\infty}x_n=+\infty$, such that
+$$\lim_{n\to\infty} \int_0^1 |f(x_n,y)| \ dy \ = \ 0 \  .
+$$
+\end{problem}
+
+\begin{problem}{January 2011}{integral inequalities?}
+  Let $f \in L_{\infty}([0,1])$. Prove that
+ \[
+   \lim_{n \to \infty} \frac{\int_{[0,1]} |f(x)|^{n+1} \, dx}{\int_{[0,1]} |f(x)|^{n} \, dx} = \|f\|_{\infty}.
+ \]
+\end{problem}
+
+\begin{problem}{January 2011}{integral inequalities}
+  Let $f_n: \mathbb{R} \to [0, 1]$ be functions such that
+ $\sup_{x \in \mathbb{R}} f_n(x)=1/n$ and $\int_{\mathbb{R}} f(x) \, dx=1$. Set
+ \[
+  F(x)= \sup_{n \in \mathbb{N}} f_n(x).
+ \]
+ Find all possible values of $\int_{\mathbb{R}} F(x) \, dx$.
+
+\end{problem}
+
+\begin{problem}{September 2011}{hölder's inequality}
+  Let $(X,\Omega, \mu)$ be a finite measure space.
+ \begin{enumerate}[(i)]
+   \item Prove that for any $p<q, \ L_q(\mu) \subset L_p(\mu)$.
+   \item Assume that for any
+ $t>0$ there exists $E \in \Omega$ satisfying
+ \[
+  0< \mu(E) <t.
+ \]
+ Prove that for any $1<p< \infty$ there exists a function $f \in
+ L_p(\mu)$ such that $f \notin L_q(\mu)$ for any $q>p$.
+\end{enumerate}
+\end{problem}
+
+
+\subsection{Miscellaneous}
+
+\begin{problem}{September 2011}{bounded variation}
+  Suppose $f:[0,1] \to \R$ satisfies $f(x)-f(y)<x-y$ for all $x,y\in [0,1], x>y$.
+  Show that $f'$ exists almost everywhere on $[0,1]$ or give a counterexample.
+\end{problem}
+
+
+\begin{problem}{January 2011}{egoroff's theorem}
+  Let $E$ be the exceptional set in Egoroff's theorem.
+    Is it possible to prove Egoroff's theorem with
+    $\l(E)=0$ instead of $\l(E) < e$?
+\end{problem}
+
 
 \begin{problem}{January 2011}{change of variables}
   Let $f,g: \mathbb R \rightarrow \mathbb R$ be $L_1$-functions.
@@ -248,17 +431,6 @@ Prove that $h \in L_1(\mathbb R)$ and $\|h\|_1 \le \|f\|_1 \cdot \|g\|_1$.
 \end{enumerate}
 \end{problem}
 
-\begin{problem}{January 2012}{measurable functions}
-  Let $f : [a,b] \to \R$ be a differentiable function.  Prove that the function $f'$ is measurable.
-\end{problem}
-
-\begin{problem}{January 2012}{$L^p$ spaces}
-  Let $1 \le p < \infty$, and let $f \in L_p(\mu)$. Prove that
-\[
- \lim_{t \to 0} t^p \mu \{x \mid |f(x)|>t \} =0.
-\]
-\end{problem}
-
 \begin{problem}{January 2012}{Lebesgue differentiation theorem, Hardy-Littlewood maximal estimate?}
   Let  $f \in L_1(\R)$.
   For $n \in \N$ define the function $g_n: \R \to \R$ as follows.  For $k \in \Z$ and for $x \in [k/n,(k+1)/n)$ set
@@ -268,58 +440,6 @@ Prove that $h \in L_1(\mathbb R)$ and $\|h\|_1 \le \|f\|_1 \cdot \|g\|_1$.
 Prove that $g_n$ converges to $f$ a.e. and in $L_1(\R)$.
 \end{problem}
 
-\begin{problem}{January 2012}{integral convergence}
-  Let $(X, \mathcal{A}, \mu)$ be a finite measure space ($\mu(X)< \infty$). Assume that a sequence $\{f_n\}_{n=1}^{\infty} \subseteq L_1(\mu)$ satisfies the condition
-\[
-  \frac{1}{\sqrt{\mu(E)}} \int_E |f_n| \, d\mu \le 1
-\]
-for all $n \in \N$ and all sets $E$ of positive measure. Prove that if $f_n \to f$ a.e., then $f \in L_1(\mu)$ and
-\[
-  \int_X f_n \, d \mu \to \int_X f \, d \mu.
- \]
-\end{problem}
-
-\begin{problem}{January 2012}{$L^p$ spaces}
-  Construct a function $f \in L_1(\R)$ such that $f \notin L_2((a,b))$ for any interval $(a,b) \subseteq \R$.
-\end{problem}
-
-\begin{problem}{September 2019}{countable subadditivity?}
-  Let $E$ be the set of all $x\in(0,1)$ such that there exists  a sequence of irreducible fractions
-$\{p_n/q_n\}_{n\in\mathbb{N}}$ with $p_n,q_n\in\mathbb{N}, \ q_1<q_2<\cdots$ such that
-$$
-\left|x-\frac{p_n}{q_n}\right| \ \le \ \frac{1}{q_n^3} \ , \quad n=1,2,...
-$$
-Prove that the Lebesgue measure of $E$ is zero.
-\end{problem}
-
-\begin{problem}{September 2019}{integral convergence}
-  Let  $f$ be a measurable function on $(0,\infty)$, and for $n=1,2,\ldots$ let
-$f_n$ be defined by
-$$
-f_n(x)=f(x)e^{-x}\left[1+x+\frac{x^2}{2!}+\cdots+\frac{x^n}{n!}\right] \ .
-$$
-Suppose $f \in L^2[(0,\infty)]$. Prove that $\lim_{n\to \infty}\|f_n-f\|_{L^2[(0,\infty)]}=0$
-\end{problem}
-
-\begin{problem}{September 2019}{Fubini, Hölder}
-    Let $f:\mathbb{R}\times (0,1)\to\mathbb{R}$ be a measurable function such that for any $y\in(0,1)$,
-$$\int_{\mathbb{R}} f^2(x,y) \ dx \ \le \ 1\  .
-$$
-Prove there exists a sequence $\{x_n\}_{n\in\mathbb{N}}$, with $\lim_{n\to\infty}x_n=+\infty$, such that
-$$\lim_{n\to\infty} \int_0^1 |f(x_n,y)| \ dy \ = \ 0 \  .
-$$
-\end{problem}
-
-\begin{problem}{September 2019}{Hölder}
-  Let $(X,\Omega,\mu)$ be a measure space with $\mu(X)=1$, and let $f\in L^2(\mu)$ be a non-negative function satisfying $\int_X f \ d\mu\ge 1$. Prove that
-$$
-\mu\left(\{x\in X  \mid \ f(x)>1\}\right) \ \ge \  \frac{\left(\int_{X} f \ d\mu-1\right)^2}{\int_X f^2 \ d\mu} \ .
-$$
-\end{problem}
-
-\begin{sketch}
-Use Cauchy-Schwartz with $f$ and the indicator of the set where $f(x) > 1$.
-\end{sketch}
 
 \begin{problem}{September 2019}{absolute continuity}
    A function $f:(0,1)\to\mathbb{R}$ is locally Lipschitz if for   any $x\in(0,1)$ there is an open interval $I_x$ with $x\in I_x\subset (0,1)$ and a constant $C_x$ such that $|f(y)-f(y')|\le C_x|y-y'|$ for $y,y'\in I_x$.
@@ -332,15 +452,6 @@ $[a,b]\subset (0,1)$.
 \end{enumerate}
 \end{problem}
 
-\begin{problem}{May 2020}{outer regularity}
-  Let $E \subset (0,1)$ be a measurable set such that for any interval $(a,b) \subset (0,1)$, there exists an interval $(c,d) \subset (a,b) \setminus E$ with
- \[
-  d-c \ge \frac{a}{10} (b-a).
- \]
- Prove that $m(E)=0$.
-
-\end{problem}
-
 \begin{problem}{May 2020}{bounded variation}
   Let $f:\mathbb{R}\to\mathbb{R}$ be a Lebesgue measurable function such that
 $$
@@ -349,54 +460,11 @@ $$
 Show that the derivative function $x\to f'(x)$ exists a.e. on $\mathbb{R}$.
 \end{problem}
 
-\begin{problem}{May 2020}{triangle inequality?}
-  Let $r_n, \ n=1,2,\ldots,$ be an enumeration of the rationals in the interval $[0,1]$ and consider the function  $f:[0,1]\to\mathbb{R}\cup{\infty}$ defined by
-$$
-f(x) \ = \ \sum_{n=1}^\infty \frac{1}{n^2}\frac{1}{|x-r_n|^{1/3}} \ , \quad 0\le x\le 1 \ .
-$$
-Show that $f\in L^2(0,1)$.
-\end{problem}
-
-
-\begin{problem}{May 2020}{$L^p$ spaces}
-Suppose $f$ is a $C^1$ function on $\mathbb{R}$ satisfying $f(0)=0, \ |f(x)|\le |x|^{-1/2}, \ x\ne 0$. Let $g$ be in  $L^1(\mathbb{R})$.
-\begin{enumerate}[(a)]
-\item Show there is a constant $C$ such that $m\{|g|>\alpha\}\le C/\alpha$ for all $\alpha>0$.
-
-\item Show that the function $h(x)=f(g(x))$ is in $L^1(\mathbb{R})$.
-\end{enumerate}
-\end{problem}
-
-\begin{problem}{May 2011}{integral convergence}
-  Let $f_n,g_n,f,g \in L_1(\mu)$ be functions such that
-    $f_n \to f$ a.e., $g_n \to g$ a.e. and $|f_n| \le g_n$. Prove
-    that if $\int g_n \, d \mu \to \int g \, d \mu$, then
-    $\int f_n \, d \mu \to \int f \, d \mu$.
-    (Hint: use Fatou's Lemma.)
-\end{problem}
-
 \begin{problem}{May 2011}{Egorov's theorem}
   Let $\{f_n: [0,1] \to \R\}_{n=1}^\infty$ be a sequence of continuous functions
      such that $f_n(x) \to f(x)$ for any $x \in [0,1]$. Does there
      exist a set $E \subset [0,1]$ of Lebesgue measure 0 such that
      $f_n \to f$ uniformly on $[0,1] \setminus E$?
-\end{problem}
-
-\begin{problem}{January 2015}{simple function approximation}
-Let $f$ be a nonnegative measurable function on $(0,1)$. Assume that there is a constant $c$, such that
-$$\int_0^1 (f(x))^n\,dx=c,\qquad n=1,2,\dots$$
-Show that there is a measurable set $E\subset (0,1)$, such that
-$$f(x)=\chi_E(x),\qquad \text{ for a.e. }  x\in(0,1).$$
-\end{problem}
-
-\begin{problem}{January 2015}{h\"older's inequality}
-Let $f$ be locally integrable on $\mathbb R^n$, $1<p<\infty$. Show that the following are equivalent:
-
-\begin{enumerate}[(1)]
-    \item $f\in L^p(\mathbb R^n)$.
-    \item there exist $M>0$, such that for any finite collection of mutually disjoint measurable sets $E_1, E_2,\dots, E_k$, with $0<m(E_i) <\infty$ for $1\le i\le k$, 
-$$\sum_{i=1}^k \left(\frac1{m(E_i)}\right)^{p-1}\left|\int_{E_i} f(x)\,dx\right|^p\le M.$$
-\end{enumerate}
 \end{problem}
 
 \begin{problem}{January 2011}{}
@@ -412,47 +480,11 @@ $$\sum_{i=1}^k \left(\frac1{m(E_i)}\right)^{p-1}\left|\int_{E_i} f(x)\,dx\right|
 
 \begin{problem}{January 2015}{Egorov's theorem}
 Let $E_k\subset [a,b]$, $k\in\mathbb N$ be measurable sets, and there exists $\delta>0$ such that $m(E_k)\ge \delta$ for all $k$.
- Assume that $a_k\in\mathbb R$ satisfies 
+ Assume that $a_k\in\mathbb R$ satisfies
 $$\sum_{k=1}^\infty |a_k|\chi_{E_k}(x)<\infty\qquad \text{ for a.e. }  x\in [a,b].$$
 Show that
 $$\sum_{k=1}^\infty |a_k|<\infty.$$
 (For extra challenge, find a proof that does not use Egorov's theorem).
-\end{problem}
-
-\begin{problem}{January 2015}{Carath\'eodory's criterion}
-Let $A, B\subset \mathbb R^d$. Assume $A\cup B$ is measurable, and $m(A\cup B)<\infty$. If
-$$m(A\cup B)=m^*(A)+m^*(B)$$
-Show that $A$ and $B$ are measurable. 
-
-(Hint: prove first that for any set $A$, there a measurable set $U$, with $A\subset U$, such that $m^*(A)=m(U)$.)
-\end{problem}
-
-\begin{problem}{September 2014}{fat Cantor set}
-Construct a measurable subset $A$ of $(0,1)$ such that $m(A)<1$ and 
- $m \big(A \cap (a,b) \big) >0$ for any $(a,b) \subset (0,1)$.
-\end{problem}
-
-\begin{problem}{September 2014}{integrability?}
-Let $\{f_k(x)\}$ be a sequence of nonnegative measurable functions on $E$ and $m(E)<\infty$. Show that $\{f_k(x)\}$ converges in measure to $0$ if and only if 
-$$\lim_{k\to\infty}\int_E\frac{f_k(x)}{1+f_k(x)}\,dx=0.$$
-\end{problem}
-
-\begin{problem}{September 2014}{integrability?}
-Let $1\le p<\infty$, $f\in L^p(\mathbb R^n)$. Let
-$$f_*(\lambda)=m(\{x: |f(x)|>\lambda\}), \quad \lambda>0$$
-Show that 
-
-\begin{enumerate}[(i)]
-\item$p\int_0^\infty \lambda^{p-1} f_*(\lambda)\,d\lambda= \int |f(x)|^p\,dx$
-\item  $\lim_{\lambda\to\infty}\lambda^p f_*(\lambda)=0,\qquad \lim_{\lambda\to 0}\lambda^p f_*(\lambda)=0$
-\end{enumerate}
-\end{problem}
-
-\begin{problem}{September 2014}{H\"older's inequality}
-Let $K=\{f :(0,+\infty) \to \R \mid \int_0^{\infty} f^4(x) \, dx \le 1  \}$. Evaluate
-\[
-  \sup_{f \in K} \int_0^\infty f^3(x) e^{-x}  \, dx.
-\]
 \end{problem}
 
 \begin{problem}{September 2014}{Lebesgue differentiation}
@@ -463,10 +495,6 @@ Let  $f: \R \to \R$ be a function such that $\int_{\R} |f(x)| \, dx < \infty$. S
 converges in $L_1(\R)$.
 \end{problem}
 
-\begin{problem}{January 2014}{outer regularity}
-Prove or disprove:  If $E$ is an open subset of $\R$ with $m(E)=1$ then there is a finite union of intervals $F$ containing $E$ with $m(F)<1.1$.
-\end{problem}
-
 \begin{problem}{January 2014}{Density of smooth/simple functions}
 Let $f\in L_1\cap L_4$ (on some measure space).  Prove that the function defined on $[1,4]$, given by the following formula
 \begin{align*}
@@ -475,61 +503,20 @@ p & \mapsto \|f\|_p
  is continuous.
 \end{problem}
 
-\begin{problem}{January 2014}{H\"older's inequality}
-Find all $q \ge 1$, such that $f(x^2) \in L_q((0,1),m)$ for any $f(x)  \in L_4((0,1),m)$, where $m$ denotes the Lebesgue measure.
-\end{problem}
-
 \begin{problem}{January 2014}{Fubini}
-Let 
+Let
 \begin{align*}
 E &\subset \{(x,y) \mid 0 \le x \le 1, \ 0 \le y \le x\}\\
 E_x &= \{y\mid (x,y)\in E\}\\
 E_y &= \{x\mid (x,y)\in E\}
 \end{align*}
-and assume that $m(E_x) \ge x^3$ for any $x \in [0,1]$.  
+and assume that $m(E_x) \ge x^3$ for any $x \in [0,1]$.
 \begin{enumerate}[(i)]
  \item Prove that there exists $y \in [0,1]$ such that $m(E_y) \ge \dfrac{1}{4}$.
  %\medskip
- \item (Hard) Prove that there exists $y \in [0,1]$ such that $m(E_y) \ge c$, where $c>1/4$ is a constant independent of $E$. Find the optimal such $c$. 
+ \item (Hard) Prove that there exists $y \in [0,1]$ such that $m(E_y) \ge c$, where $c>1/4$ is a constant independent of $E$. Find the optimal such $c$.
  %optimal value 1-\dfrac{1}{\sqrt{2}}
 \end{enumerate}
-\end{problem}
-
-\begin{problem}{January 2014}{Hardy-Littlewood maximal inequality}
-Let $E \subset [0,1]$ be a measurable set, $m(E) \ge \dfrac{99}{100}$. Prove that there exists $x \in [0,1]$ such that for any $r \in (0,1)$,
-    \[
-      m \big( E \cap (x-r,x+r) \big) \ge \frac{r}{4}.
-    \]
-
-\emph{Hint:} One approach to this problem involves the Hardy-Littlewood maximal inequality.
-\end{problem}
-
-\begin{problem}{2013 draft}{basic measure theory}
-Let $(X, \mathcal{A},\mu)$ be a finite measure space. For a set $A \subset X$ define $\mu_*(A)=\mu(X)-\mu^*(X \setminus A)$, where $\mu^*$ is the outer measure. Prove that $\mu_*(A) \le \mu^*(A)$ for any $A \subset X$.
-\end{problem}
-
-\begin{problem}{2013 draft}{basic measure theory}
-Let $A \subset [0,1] \times [0,1]$ be the set of points $(x,y)$ with decimal representations $x=0.x_1 x_2 \ldots, \ \  y=0.y_1 y_2 \ldots$ such that  $x_n y_n=5$ for all $n \in \N$. Prove that the set $A$ is measurable and find its Lebesgue measure.
-\end{problem}
-
-\begin{problem}{2013 draft}{convergence in measure}
-Let $f_1, f_2, \ldots, f, g$ be measurable functions on a measure space  $(X, \mathcal{A},\mu)$. Assume that $f_n \to f$ in measure and $f_n \le g$ a.e. Prove that $f \le g$ a.e.
-\end{problem}
-
-\begin{problem}{2013 draft}{basic measure theory}
-Let $\{x_n\}_{n=1}^{\infty} \subset [0,1]$ be any sequence. For $n \in \N$ define the set $A_n \subset \R$ by
-  \[
-   A_k=\bigcup_{n=k}^{\infty} \left(x_n-\frac{k}{n^3}, x_n+ \frac{k}{n^3} \right).
-  \]
-  Prove that $m(\bigcap_{k=1}^{\infty} A_k)=0$, where $m$ denotes the Lebesgue measure.
-\end{problem}
-
-\begin{problem}{2013 draft}{integral convergence}
-Prove that
-  \[
-   \lim_{n \to \infty} \int_\R \frac{\cos^{n} (\pi  x)}{(x-n)^2+1} \, dx
-  \]
-  exists and find it.
 \end{problem}
 
 \section{Categorized (with solutions)}
@@ -560,6 +547,34 @@ $$
 Step 1: Change variables so that all integrals are over $[0,1]$.
 Step 2: Observe that the new integrand is converging pointwise to $0$ a.e.
 Step 3: Use monotone/dominated convergence theorem.
+\end{sketch}
+
+
+\begin{problem}{January 2015}{h\"older's inequality}
+Let $f$ be locally integrable on $\mathbb R^n$, $1<p<\infty$. Show that the following are equivalent:
+
+\begin{enumerate}[(i)]
+    \item $f\in L^p(\mathbb R^n)$.
+    \item there exist $M>0$, such that for any finite collection of mutually disjoint measurable sets $E_1, E_2,\dots, E_k$, with $0<m(E_i) <\infty$ for $1\le i\le k$,
+$$\sum_{i=1}^k \left(\frac1{m(E_i)}\right)^{p-1}\left|\int_{E_i} f(x)\,dx\right|^p\le M.$$
+\end{enumerate}
+\end{problem}
+
+\begin{sketch}
+  For $(i) \implies (ii)$, use H\"older's inequality with $f$ and the indicator functions of $E_i$. For $(ii) \implies (i)$, observe that the inequality in $(ii)$ implies that $\int_E |fg| \leq M \norm{g}_q$ for all $g \in L^q(E)$. This follows from approximating $g$ by simple functions.
+  The inequality shows that integration against $f$ is a bounded linear functional on $L^q$, and therefore, $f$ must be in $L^p$ by the Riesz representation theorem.
+\end{sketch}
+
+
+\begin{problem}{September 2019}{Hölder}
+  Let $(X,\Omega,\mu)$ be a measure space with $\mu(X)=1$, and let $f\in L^2(\mu)$ be a non-negative function satisfying $\int_X f \ d\mu\ge 1$. Prove that
+$$
+\mu\left(\{x\in X  \mid \ f(x)>1\}\right) \ \ge \  \frac{\left(\int_{X} f \ d\mu-1\right)^2}{\int_X f^2 \ d\mu} \ .
+$$
+\end{problem}
+
+\begin{sketch}
+Use Cauchy-Schwartz with $f$ and the indicator of the set where $f(x) > 1$.
 \end{sketch}
 
 \section{Uncategorized}
@@ -599,10 +614,10 @@ Let  $(X, \mathcal{A},\mu)$ be a $\sigma$-finite measure space with $\mu(X)=\inf
 \end{problem}
 
 \begin{problem}{2013 draft}{}
-Let $E \subset \{(x,y) \mid 0 \le x \le 1, \ 0 \le y \le x$, and assume that $m(E_x) \ge x^3$ for any $x \in [0,1]$. Prove that there exists $y \in [0,1]$ such that 
+Let $E \subset \{(x,y) \mid 0 \le x \le 1, \ 0 \le y \le x$, and assume that $m(E_x) \ge x^3$ for any $x \in [0,1]$. Prove that there exists $y \in [0,1]$ such that
 \begin{enumerate}[(i)]
  \item $m(E_y) \ge \frac{1}{4}$;
- \item $m(E_y) \ge \frac{3}{8}$; 
+ \item $m(E_y) \ge \frac{3}{8}$;
 \end{enumerate}
 \end{problem}
 
