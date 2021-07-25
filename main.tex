@@ -62,7 +62,7 @@
 %\setcounter{problemnum}{1}
 
 \newenvironment{problem}[2]{
-    \begin{probstate}[Date: #1, tags: \texttt{#2}]
+    \begin{probstate}[Date: #1, tags: {\color{white} \texttt{#2}}]
 }
 {
   \end{probstate}
@@ -123,9 +123,6 @@ Unless otherwise specified, $m$ refers to the Lebesgue measure on $\mathbb{R}^n$
 Let $(X, \mathcal{A},\mu)$ be a finite measure space. For a set $A \subset X$ define $\mu_*(A)=\mu(X)-\mu^*(X \setminus A)$, where $\mu^*$ is the outer measure. Prove that $\mu_*(A) \le \mu^*(A)$ for any $A \subset X$.
 \end{problem}
 
-\begin{problem}{2013 draft}{basic measure theory}
-Let $A \subset [0,1] \times [0,1]$ be the set of points $(x,y)$ with decimal representations $x=0.x_1 x_2 \ldots, \ \  y=0.y_1 y_2 \ldots$ such that  $x_n y_n=5$ for all $n \in \N$. Prove that the set $A$ is measurable and find its Lebesgue measure.
-\end{problem}
 
 \begin{problem}{2013 draft}{convergence in measure}
 Let $f_1, f_2, \ldots, f, g$ be measurable functions on a measure space  $(X, \mathcal{A},\mu)$. Assume that $f_n \to f$ in measure and $f_n \le g$ a.e. Prove that $f \le g$ a.e.
@@ -139,26 +136,12 @@ Let $\{x_n\}_{n=1}^{\infty} \subset [0,1]$ be any sequence. For $n \in \N$ defin
   Prove that $m(\bigcap_{k=1}^{\infty} A_k)=0$, where $m$ denotes the Lebesgue measure.
 \end{problem}
 
-\begin{problem}{January 2014}{outer regularity}
-Prove or disprove:  If $E$ is an open subset of $\R$ with $m(E)=1$ then there is a finite union of intervals $F$ containing $E$ with $m(F)<1.1$.
-\end{problem}
 
 \begin{problem}{September 2014}{integrability?}
 Let $\{f_k(x)\}$ be a sequence of nonnegative measurable functions on $E$ and $m(E)<\infty$. Show that $\{f_k(x)\}$ converges in measure to $0$ if and only if
 $$\lim_{k\to\infty}\int_E\frac{f_k(x)}{1+f_k(x)}\,dx=0.$$
 \end{problem}
 
-\begin{problem}{September 2014}{integrability?}
-Let $1\le p<\infty$, $f\in L^p(\mathbb R^n)$. Let
-$$f_*(\lambda)=m(\{x: |f(x)|>\lambda\}), \quad \lambda>0$$
-Show that
-
-\begin{enumerate}[(i)]
-\item$p\int_0^\infty \lambda^{p-1} f_*(\lambda)\,d\lambda= \int |f(x)|^p\,dx$
-\item  $\lim_{\lambda\to\infty}\lambda^p f_*(\lambda)=0$
-\item $\lim_{\lambda\to 0}\lambda^p f_*(\lambda)=0$
-\end{enumerate}
-\end{problem}
 
 \begin{problem}{September 2014}{fat Cantor set}
 Construct a measurable subset $A$ of $(0,1)$ such that $m(A)<1$ and
@@ -339,7 +322,7 @@ Let $E \subset [0,1]$ be a measurable set, $m(E) \ge \dfrac{99}{100}$. Prove tha
 \emph{Hint:} One approach to this problem involves the Hardy-Littlewood maximal inequality.
 \end{problem}
 
-\begin{problem}{January 2014}{H\"older's inequality}
+\begin{problem}{January 2014}{H\"older's inequality, change of variables?}
 Find all $q \ge 1$, such that $f(x^2) \in L_q((0,1),m)$ for any $f(x)  \in L_4((0,1),m)$, where $m$ denotes the Lebesgue measure.
 \end{problem}
 
@@ -485,7 +468,7 @@ Let  $f: \R \to \R$ be a function such that $\int_{\R} |f(x)| \, dx < \infty$. S
 converges in $L_1(\R)$.
 \end{problem}
 
-\begin{problem}{January 2014}{Density of smooth/simple functions}
+\begin{problem}{January 2014}{Dominated convergence}
 Let $f\in L_1\cap L_4$ (on some measure space).  Prove that the function defined on $[1,4]$, given by the following formula
 \begin{align*}
 p & \mapsto \|f\|_p
@@ -510,6 +493,39 @@ and assume that $m(E_x) \ge x^3$ for any $x \in [0,1]$.
 \end{problem}
 
 \section{Categorized (with solutions)}
+
+\begin{problem}{September 2014}{integrability, Fubini}
+Let $1\le p<\infty$, $f\in L^p(\mathbb R^n)$. Let
+$$f_*(\lambda)=m(\{x: |f(x)|>\lambda\}), \quad \lambda>0$$
+Show that
+\begin{enumerate}[(i)]
+\item$p\int_0^\infty \lambda^{p-1} f_*(\lambda)\,d\lambda= \int |f(x)|^p\,dx$
+\item  $\lim_{\lambda\to\infty}\lambda^p f_*(\lambda)=0$
+\item $\lim_{\lambda\to 0}\lambda^p f_*(\lambda)=0$
+\end{enumerate}
+\end{problem}
+\begin{sketch}
+For simplicity, prove the result for $L^1$ functions, and use a change of variables argument to prove it for $p > 1$.
+For part (i), express $f_{\ast}(\lambda)$ as the integral over $\mathbb{R}$ of the indicator of $\left\{x \mid |f(x)| > \lambda \right\}$, and then use Fubini to swap integrals.
+For parts (ii) and (iii), note that $f_{\ast}$ is decreasing, so it will suffice to prove it for a sequence of $\lambda$ going to $\infty$ and $0$.
+We pick a sequence such that the sums of corresponding quantities are bounded above by an absolute constant times the integral of $f$: we can do this by interpreting the quantities in the sequence as areas of rectangles under the graph of the function $f$.
+\end{sketch}
+
+\begin{problem}{January 2014}{\color{red} Unclear what the tag should be}
+Prove or disprove:  If $E$ is an open subset of $\R$ with $m(E)=1$ then there is a finite union of intervals $F$ containing $E$ with $m(F)<1.1$.
+\end{problem}
+\begin{sketch}
+False: consider the set $E$ obtained by taking the unions of balls of radius $\dfrac{1}{n^2}$ around $n \in \mathbb{N}$.
+This open set has finite measure, but any finite union of intervals containing it will have infinite measure.
+\end{sketch}
+
+\begin{problem}{2013 draft}{basic measure theory}
+Let $A \subset [0,1] \times [0,1]$ be the set of points $(x,y)$ with decimal representations $x=0.x_1 x_2 \ldots, \ \  y=0.y_1 y_2 \ldots$ such that  $x_n y_n=5$ for all $n \in \N$. Prove that the set $A$ is measurable and find its Lebesgue measure.
+\end{problem}
+\begin{sketch}
+Observe that for any $(x,y) \in A$, $x+y = 0.\overline{6}$. This means $A$ is contained in the graph of the continuous function $y = 0.\overline{6} - x$, which is a measure $0$ set.
+Subsets of measure $0$ sets are measurable, and have measure $0$.
+\end{sketch}
 
 \begin{problem}{September 2011}{integral convergence}
 Let $f \in L_1([0,1], dx)$. Find
@@ -603,13 +619,6 @@ Let  $(X, \mathcal{A},\mu)$ be a $\sigma$-finite measure space with $\mu(X)=\inf
 \]
 \end{problem}
 
-\begin{problem}{2013 draft}{}
-Let $E \subset \{(x,y) \mid 0 \le x \le 1, \ 0 \le y \le x$, and assume that $m(E_x) \ge x^3$ for any $x \in [0,1]$. Prove that there exists $y \in [0,1]$ such that
-\begin{enumerate}[(i)]
- \item $m(E_y) \ge \frac{1}{4}$;
- \item $m(E_y) \ge \frac{3}{8}$;
-\end{enumerate}
-\end{problem}
 
 \begin{problem}{2013 draft}{}
 \begin{enumerate}[(i)]
