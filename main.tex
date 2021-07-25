@@ -107,6 +107,7 @@ To add a problem to this list, use the \texttt{problem} environment: this enviro
   <Problem statement>
 \end{problem}
 \end{lstlisting}
+The tags appear in white font in the PDF so as to not give away the idea of the problem, but highlighting/copy-pasting the tag will reveal the contents.
 
 To add a solution, or a solution sketch, use the \texttt{solution} and \texttt{sketch} environments.
 These environments do not take any arguments.
@@ -206,14 +207,6 @@ Prove that the Lebesgue measure of $E$ is zero.
   Prove that $f=0$ a.e.
 \end{problem}
 
-\begin{problem}{January 2011}{measurable functions}
-  \item Let A be a sequence of measurable subsets of $[0,1]$ such that $\inf m(A_n)>0$, where $m$ stands for the Lebesgue measure.
-   \begin{enumerate}[(i)]
-    \item Prove that there exists $x \in [0,1]$ which belongs to infinitely many of the sets $A_n$.
-    \item Does there necessarily exist a point which {\color{red} (does not?)} belong to any of the sets $A_n$, except finitely many?
-   \end{enumerate}
-\end{problem}
-
 \begin{problem}{January 2011}{simple function approximation}
   Let $f:X \to [0, +\infty)$ be an integrable function on
     a measure space $(X, \mathcal{A},\mu)$.
@@ -278,16 +271,7 @@ $$
 Suppose $f \in L^2[(0,\infty)]$. Prove that $\lim_{n\to \infty}\|f_n-f\|_{L^2[(0,\infty)]}=0$
 \end{problem}
 
-\begin{problem}{January 2012}{integral convergence}
-  Let $(X, \mathcal{A}, \mu)$ be a finite measure space ($\mu(X)< \infty$). Assume that a sequence $\{f_n\}_{n=1}^{\infty} \subseteq L_1(\mu)$ satisfies the condition
-\[
-  \frac{1}{\sqrt{\mu(E)}} \int_E |f_n| \, d\mu \le 1
-\]
-for all $n \in \N$ and all sets $E$ of positive measure. Prove that if $f_n \to f$ a.e., then $f \in L_1(\mu)$ and
-\[
-  \int_X f_n \, d \mu \to \int_X f \, d \mu.
- \]
-\end{problem}
+
 
 \begin{problem}{January 2011}{integral convergence}
   Let $\{f_n\} \subset L_1(\mu)$ be a decreasing sequence of functions such that $f_n \to f$ a.e.
@@ -306,9 +290,6 @@ for all $n \in \N$ and all sets $E$ of positive measure. Prove that if $f_n \to 
     Prove that if \newline
     $\|f_n\|_1 \to \|f\|_1$,
     then $f_n \to f$ in $L_1(\mu)$.
-
-    (Hint: use the previous problem)
-
 \end{problem}
 
 \subsection{Integral inequalities}
@@ -322,9 +303,7 @@ Let $E \subset [0,1]$ be a measurable set, $m(E) \ge \dfrac{99}{100}$. Prove tha
 \emph{Hint:} One approach to this problem involves the Hardy-Littlewood maximal inequality.
 \end{problem}
 
-\begin{problem}{January 2014}{H\"older's inequality, change of variables?}
-Find all $q \ge 1$, such that $f(x^2) \in L_q((0,1),m)$ for any $f(x)  \in L_4((0,1),m)$, where $m$ denotes the Lebesgue measure.
-\end{problem}
+
 
 \begin{problem}{September 2014}{H\"older's inequality}
 Let $K=\{f :(0,+\infty) \to \R \mid \int_0^{\infty} f^4(x) \, dx \le 1  \}$. Evaluate
@@ -468,14 +447,6 @@ Let  $f: \R \to \R$ be a function such that $\int_{\R} |f(x)| \, dx < \infty$. S
 converges in $L_1(\R)$.
 \end{problem}
 
-\begin{problem}{January 2014}{Dominated convergence}
-Let $f\in L_1\cap L_4$ (on some measure space).  Prove that the function defined on $[1,4]$, given by the following formula
-\begin{align*}
-p & \mapsto \|f\|_p
-\end{align*}
- is continuous.
-\end{problem}
-
 \begin{problem}{January 2014}{Fubini}
 Let
 \begin{align*}
@@ -493,6 +464,68 @@ and assume that $m(E_x) \ge x^3$ for any $x \in [0,1]$.
 \end{problem}
 
 \section{Categorized (with solutions)}
+
+\begin{problem}{January 2014}{Dominated convergence}
+Let $f\in L_1\cap L_4$ (on some measure space).  Prove that the function defined on $[1,4]$, given by the following formula
+\begin{align*}
+p & \mapsto \|f\|_p
+\end{align*}
+ is continuous.
+\end{problem}
+\begin{sketch}
+  Reduce to the case of proving the $p \mapsto \norm{f}_p^p$ is continuous.
+  Prove this reduced statement using dominated convergence theorem.
+\end{sketch}
+
+\begin{problem}{January 2014}{H\"older's inequality, change of variables?}
+Find all $q \ge 1$, such that $f(x^2) \in L_q((0,1),m)$ for any $f(x)  \in L_4((0,1),m)$, where $m$ denotes the Lebesgue measure.
+\end{problem}
+\begin{sketch}
+  Perform a change of variables, and use H\"older's inequality.
+\end{sketch}
+
+\begin{problem}{January 2012}{integral convergence}
+  Let $(X, \mathcal{A}, \mu)$ be a finite measure space ($\mu(X)< \infty$). Assume that a sequence $\{f_n\}_{n=1}^{\infty} \subseteq L_1(\mu)$ satisfies the condition
+\[
+  \frac{1}{\sqrt{\mu(E)}} \int_E |f_n| \, d\mu \le 1
+\]
+for all $n \in \N$ and all sets $E$ of positive measure. Prove that if $f_n \to f$ a.e., then $f \in L_1(\mu)$ and
+\[
+  \int_X f_n \, d \mu \to \int_X f \, d \mu.
+ \]
+\end{problem}
+\begin{sketch}
+  Use Fatou's lemma to deduce that $f \in L_1(\mu)$.
+  We then use the fact that for finite measure spaces, pointwise convergence implies convergence in measure.
+  Pick a small $\varepsilon$ and divide $X$ into subsets $Y_n$ and $Z_n$, defined in the following manner.
+  \begin{align*}
+    Y_n &\coloneqq \left\{ x \mid \left| f(x) - f_n(x) \right| \leq \varepsilon \right\} \\
+    Z_n &\coloneqq \left\{ x \mid \left| f(x) - f_n(x) \right| > \varepsilon \right\}
+  \end{align*}
+  As $n$ goes to $\infty$, the measure of $Z_n$ goes to $0$, by convergence in measure.
+  \begin{align*}
+    \int_X |f_n - f| \leq \int_{Y_n} |f_n - f| + \int_{Z_n} |f_n| + \int_{Z_n} |f|
+  \end{align*}
+  The first and the third terms are bounded above by $\mu(E) \cdot \varepsilon$ and a small quantity as $n$ goes to $\infty$.
+  To bound the second term, observe that the given inequality in the hypothesis implies that all the $f_n$ are actually in $L_2(E)$ (use Riesz representation theorem).
+  Then Cauchy-Schwarz with $f_n$ and the indicator of $Z_n$ gives the result.
+\end{sketch}
+
+\begin{problem}{January 2011}{measurable functions}
+  \item Let A be a sequence of measurable subsets of $[0,1]$ such that $\inf m(A_n)>0$, where $m$ stands for the Lebesgue measure.
+   \begin{enumerate}[(i)]
+    \item Prove that there exists $x \in [0,1]$ which belongs to infinitely many of the sets $A_n$.
+    \item Does there necessarily exist a point which {\color{red} (does not?)} belong to any of the sets $A_n$, except finitely many?
+   \end{enumerate}
+\end{problem}
+\begin{sketch}
+  For contradiction's sake, suppose all points belonged to only finitely many $\{A_n\}$.
+  One could then construct a measurable function $f: [0,1] \to \mathbb{N}$ that mapped $x$ to the index of the last $A_n$ it appeared in (one needs to formally check that $f$ is measurable).
+  Then, using Lusin's theorem and outer regularity of the Lebesgue measure, one can delete an open set $E$ from $[0,1]$ such that $m(E) \leq \dfrac{\inf m(A_n)}{2}$ such that on $[0,1] \setminus E$, $f$ is continuous.
+  Since $[0,1] \setminus E$ is compact, the function $f$ is bounded on this set, by continuity.
+  On the other hand, the measure of $E$ is less than the measure of all $A_n$, which means all the $A_n$ have positive measure intersection with $[0,1] \setminus E$.
+  For any $x \in A_n$, $f(x) \geq n$, which contradicts the fact that $f$ is bounded on $[0,1] \setminus E$.
+\end{sketch}
 
 \begin{problem}{September 2014}{integrability, Fubini}
 Let $1\le p<\infty$, $f\in L^p(\mathbb R^n)$. Let
